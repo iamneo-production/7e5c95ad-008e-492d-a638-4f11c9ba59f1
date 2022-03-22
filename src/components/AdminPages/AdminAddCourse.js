@@ -43,8 +43,7 @@ const App = () => {
   }
     return (
         <header style={ headerStyle }>
-            {/* {data}; */}
-         <div className="text-center">
+                     <div className="text-center">
             <Link to="/AdminAcademy">
                 <button className="primary-button">Academy</button>
             </Link>
