@@ -32,9 +32,9 @@ const App = () => {
    else if (EnterAcademyImageUrl.length <8 || EnterAcademyImageUrl.length >14){
      alert("EnterAcademyImageUrl should be minimum 8 characters long");
    }
-    else if(EnterAcademyImageUrl !== confirmEnterAcademyImageUrl){
-        alert("EnterAcademyImageUrls are not matching");
-    }
+    // else if(EnterAcademyImageUrl !== confirmEnterAcademyImageUrl){
+    //     alert("EnterAcademyImageUrls are not matching");
+    // }
     else{
           console.log(data);
          history.push("/AdminAcademy");   
@@ -49,7 +49,7 @@ const App = () => {
             <Link to="/AdminAcademy">
                 <button className="primary-button">Academy</button>
             </Link>
-            <Link to="/Enrolled">
+            <Link to="/AdminCourse">
                 <button className="primary-button">Course</button>
             </Link>
             <Link to="/AdminStudentsList">
@@ -61,17 +61,17 @@ const App = () => {
         </div>
         <div className="text-center m-5-auto">
             <form onSubmit={submitHandler}>
-                   <p>Enter AcademyName</p>
+            <p>Enter Academy name</p>
                    <input type="AcademyName" name="AcademyName" id="academyName" value={AcademyName} onChange={changeHandler} required /> <br />
-                   <p>Enter Academyemail</p>
+                   <p>Enter the Academy email</p>
                    <input type="Academyemail" name="Academyemail" id="Academyemail" value={Academyemail} onChange={changeHandler} required /> <br />
-                   <p>Enter EnterAcademyLocation</p>
+                   <p>Enter Academy Location</p>
                    <input type="text" name="EnterAcademyLocation" id="EnterAcademyLocation" value={EnterAcademyLocation} onChange={changeHandler} required /> <br />
-                   <p>Enter ContactNumber</p>
+                   <p>Enter the Contact Number</p>
                    <input type="number" name="ContactNumber" id="ContactNumber" value={ContactNumber} onChange={changeHandler} required /> <br />
-                   <p>Enter EnterAcademyImageUrl</p> 
+                   <p>Enter the Academy Image Url</p> 
                    <input type="EnterAcademyImageUrl" name="EnterAcademyImageUrl" id="EnterAcademyImageUrl" value={EnterAcademyImageUrl} onChange={changeHandler} required /> <br />
-                   <p>Confirm EnterAcademyImageUrl</p>
+                   <p>Enter Academy description</p>
                    <input type="EnterAcademyImageUrl" name="confirmEnterAcademyImageUrl" id="confirmEnterAcademyImageUrl" value={confirmEnterAcademyImageUrl} onChange={changeHandler} required  /> <br />
                    <button  onClick={()=> setAuth(true)} id="submitButton" type="submit" name="submit">AddAcademy</button>
                 </form>
