@@ -52,6 +52,7 @@ export default function App() {
                     <Route path="/AdminAddStudent" component={ AdminAddStudent} />
                     <Route path="/AdminEditStudent" component={ AdminEditStudent} />
                 </Switch>
+                {/* <Footer /> */}
             </div>
             
         </Router>

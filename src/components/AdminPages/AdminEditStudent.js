@@ -32,51 +32,58 @@ const App = () => {
  const submitHandler = e=>{
     e.preventDefault();
   
-    
-    if(firstName.length <3){
-        alert("firstName must be 3 characters");
-      }
-      else if(lastName.length <3){
-        alert("lastName must be 3 characters");
-  
-      }
-      else if(fatherName.length <3){
-        alert("fatherName must be 3 characters");
-      }
-      else if(motherName.length <3){
-        alert("motherName must be 3 characters");
-      }
-      else if(age.length >3){
-        alert("age must be lessthan 3 characters");
-  
-      }
-      else if(phoneNumber2.length !==10){
-        alert("phoneNumber2 should be 10 digits");
-      }
-      else if(phoneNumber1.length !==10){
-        alert("phoneNumber1 should be 10 digits");
-      }
-      else if(pincode.length <6 || pincode.length >6){
-        alert("pinCode must be 6 characters");
-      }
-      else if(phoneNumber2 == phoneNumber1){
-        alert("phoneNumbers should not be same");
-      }
-      else if(streetName.length <3){
-        alert("streetName must be 3 characters");
-  
-      }
-      else if(areaName.length <3){
-        alert("areaName must be 3 characters");
-  
-      }
-  
-    else{
-          console.log(data);
-         history.push("/AdminAcademy");   
+    if(EnterAcademyLocation.length <5){
+        alert("EnterAcademyLocation must be atleast 5 characters");
     }
-  
-  }
+   else if(ContactNumber.length !==10){
+       alert("Contact number should be 10 digits");
+   }
+   else if (EnterAcademyImageUrl.length <8 || EnterAcademyImageUrl.length >14){
+     alert("EnterAcademyImageUrl should be minimum 8 characters long");
+   }
+    else if(EnterAcademyImageUrl !== confirmEnterAcademyImageUrl){
+        alert("EnterAcademyImageUrls are not matching");
+    }
+    else{
+
+        console.log(JSON.stringify(data));
+        //   let finalData = data['data'];
+        //  history.push("/user/login");       
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        setTimeout(async () => {
+            const response = await fetch('http://localhost:8080/admin/editstudent', requestOptions)
+
+            if (response.status >= 200 && response.status <= 299) {
+                let userData = JSON.stringify(await response.json());
+                console.log(userData);
+
+                if (userData === 'false') {
+                    alert('Data Not Inserted');
+                }
+                else if (userData === 'true') {
+                    alert('Data Inserted');
+                    //write here to clear
+                    history.push("/AdminAcademy");
+                }
+                else {
+                    alert(userData);
+                }
+            }
+            else {
+                let userData = (await response.json());
+                alert(userData);
+            }
+
+        }, 3000);
+
+    }
+
+}
     return (
         <header style={ headerStyle }>
             {/* {data}; */}
@@ -97,23 +104,21 @@ const App = () => {
         </div>
         <div className="text-center m-5-auto">
             <form onSubmit={submitHandler}>
-            <p>Enter First name</p>
+            <p>enter your first name</p>
                    <input type="text" name="firstName" id="firstName" value={firstName} onChange={changeHandler} required /> <br />
-                   <p>Enter Last name</p>
+                   <p>enter your Last name</p>
                    <input type="text" name="lastName" id="lastName" value={lastName} onChange={changeHandler} required /> <br />
-                   <p>Enter Father name</p>
+                   <p>enter your father name</p>
                    <input type="text" name="fatherName" id="fatherName" value={fatherName} onChange={changeHandler} required /> <br />
-                   <p>Enter Mother name</p>
+                   <p>enter your mother name</p>
                    <input type="text" name="motherName" id="motherName" value={motherName} onChange={changeHandler} required /> <br />
-                   <p>Enter male or female</p>
+                   <p>enter male or female</p>
                    <input type="text" name="gender" id="male/female" value={gender} onChange={changeHandler} required /> <br />
-                   <p>Enter email</p>
+                   <p>enter email Id</p>
                    <input type="email" name="email" id="email" value={email} onChange={changeHandler} required /> <br />
-                   {/* <input type="email" name="emailid" id="emailid" value={emailid} onChange={changeHandler} required /> <br /> */}
-                   
-                  <p>Enter age</p>
+                   <p>enter your age</p>
                    <input type="number" name="age" id="age" value={age} onChange={changeHandler} required /> <br />
-                   <p>Enter phone number</p>
+                   <p>enter phone number</p>
                    <input type="number" name="phoneNumber1" id="phoneNumber1" value={phoneNumber1} onChange={changeHandler} required /> <br />
                    <p>Enter Alternate phone number</p>
                    <input type="number" name="phoneNumber2" id="phoneNumber2" value={phoneNumber2} onChange={changeHandler} required /> <br />
@@ -135,7 +140,7 @@ const App = () => {
                    
                   <p>Enter Pincode</p>
                    <input type="number" name="pincode" id="pincode" value={pincode} onChange={changeHandler} required /> <br />
-                   <button  onClick={()=> setAuth(true)} id="enrollNowButton" type="submit" name="submit">Update Student</button>
+                   <button  onClick={()=> setAuth(true)} id="enrollNowButton" type="submit" name="submit">Update Students</button>
                 </form>
             </div>
             </header>
