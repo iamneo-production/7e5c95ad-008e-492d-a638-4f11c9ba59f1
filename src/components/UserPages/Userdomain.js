@@ -35,13 +35,45 @@ const App = () => {
         alert("passwords are not matching");
     }
     else{
-        
-          console.log(data);
-         history.push("/login");       
-      
+
+        console.log(JSON.stringify(data));
+        //   let finalData = data['data'];
+        //  history.push("/user/login");       
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        setTimeout(async () => {
+            const response = await fetch('http://localhost:8080/user/signup', requestOptions)
+
+            if (response.status >= 200 && response.status <= 299) {
+                let userData = JSON.stringify(await response.json());
+                console.log(userData);
+
+                if (userData === 'false') {
+                    alert('Data Not Inserted');
+                }
+                else if (userData === 'true') {
+                    alert('Data Inserted');
+                    //write here to clear
+                    history.push("/login");
+                }
+                else {
+                    alert(userData);
+                }
+            }
+            else {
+                let userData = (await response.json());
+                alert(userData);
+            }
+
+        }, 3000);
+
     }
+}
   
-  }
     return (
         <header>
         
