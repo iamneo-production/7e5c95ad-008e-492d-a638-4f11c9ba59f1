@@ -7,14 +7,14 @@ import BackgroundImage from '../../assets/images/admin.jpg'
 
 const App = () => {
     const [data,setData] = useState({
-        AcademyName: '',
-        EnterAcademyLocation : '',
-        Academyemail : '',
-        ContactNumber:'',
-        EnterAcademyImageUrl:'',
-        confirmEnterAcademyImageUrl:'',
+        institutename: '',
+        instituteaddress : '',
+        email : '',
+        moblie:'',
+        imageurl:'',
+        institutedescription:'',
     } )
-    const {AcademyName,EnterAcademyLocation,Academyemail,ContactNumber,EnterAcademyImageUrl,confirmEnterAcademyImageUrl} =data;
+    const {institutename,instituteaddress,email,moblie,imageurl,institutedescription} =data;
     const changeHandler = e =>{
         setData({...data,[e.target.name]:e.target.value})
     }
@@ -23,16 +23,16 @@ const App = () => {
  const submitHandler = e=>{
     e.preventDefault();
   
-    if(EnterAcademyLocation.length <5){
+    if(instituteaddress.length <5){
         alert("EnterAcademyLocation must be atleast 5 characters");
     }
-   else if(ContactNumber.length !==10){
+   else if(moblie.length !==10){
        alert("Contact number should be 10 digits");
    }
-   else if (EnterAcademyImageUrl.length <8 || EnterAcademyImageUrl.length >14){
+   else if (imageurl.length <8 || imageurl.length >14){
      alert("EnterAcademyImageUrl should be minimum 8 characters long");
    }
-    else if(EnterAcademyImageUrl !== confirmEnterAcademyImageUrl){
+    else if(imageurl !== institutedescription){
         alert("EnterAcademyImageUrls are not matching");
     }
     else{
@@ -95,17 +95,17 @@ const App = () => {
         <div className="text-center m-5-auto">
             <form onSubmit={submitHandler}>
                    <p>Enter Academy name</p>
-                   <input type="AcademyName" name="AcademyName" id="academyName" value={AcademyName} onChange={changeHandler} required /> <br />
+                   <input type="institutename" name="institutename" id="institutename" value={institutename} onChange={changeHandler} required /> <br />
                    <p>Enter the Academy email</p>
-                   <input type="Academyemail" name="Academyemail" id="Academyemail" value={Academyemail} onChange={changeHandler} required /> <br />
+                   <input type="email" name="email" id="email" value={email} onChange={changeHandler} required /> <br />
                    <p>Enter Academy Location</p>
-                   <input type="text" name="EnterAcademyLocation" id="EnterAcademyLocation" value={EnterAcademyLocation} onChange={changeHandler} required /> <br />
+                   <input type="text" name="instituteaddress" id="instituteaddress" value={instituteaddress} onChange={changeHandler} required /> <br />
                    <p>Enter the Contact Number</p>
-                   <input type="number" name="ContactNumber" id="ContactNumber" value={ContactNumber} onChange={changeHandler} required /> <br />
+                   <input type="number" name="moblie" id="moblie" value={moblie} onChange={changeHandler} required /> <br />
                    <p>Enter the Academy Image Url</p> 
-                   <input type="EnterAcademyImageUrl" name="EnterAcademyImageUrl" id="EnterAcademyImageUrl" value={EnterAcademyImageUrl} onChange={changeHandler} required /> <br />
+                   <input type="imageurl" name="imageurl" id="imageurl" value={imageurl} onChange={changeHandler} required /> <br />
                    <p>Enter Academy description</p>
-                   <input type="EnterAcademyImageUrl" name="confirmEnterAcademyImageUrl" id="confirmEnterAcademyImageUrl" value={confirmEnterAcademyImageUrl} onChange={changeHandler} required  /> <br />
+                   <input type="EnterAcademyImageUrl" name="institutedescription" id="institutedescription" value={institutedescription} onChange={changeHandler} required  /> <br />
                    <button  onClick={()=> setAuth(true)} id="submitButton" type="submit" name="submit">UpdateAcademy</button>
                 </form>
             </div>
