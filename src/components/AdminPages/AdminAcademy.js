@@ -6,8 +6,8 @@ import BackgroundImage from '../../assets/images/Delco.jpg'
 import BackgroundImage1 from '../../assets/images/admin.jpg'
 import Select from 'react-select';
 const aquaticCreatures = [
-	{ label: 'Delco Boxing Academy', value: 'Delco Boxing Academy' },
-	{ label: 'RK Boxing Academy', value: 'RK Boxing Academy' },
+	{ label: 'Banglore', value: 'Delco Boxing Academy' },
+	{ label: 'Chennai', value: 'RK Boxing Academy' },
   ];
 
 
@@ -24,14 +24,10 @@ export default function ProfileCard() {
 		<Link to="/AdminCourse">
 			<button className="primary-button">Course</button>
 		</Link>
-			
-		<Link to="/AdminEditPage">
-		<button className="primary-button">EditAcademy</button>
-			</Link>
-
-			<Link to="">
-		<button className="primary-button">DeleteAcademy</button>
-			</Link>
+		
+		<Link to="/AdminStudentsList">
+			<button className="primary-button">Students</button>
+		</Link>
 
 			<Link to="/">
 		<button className="primary-button">Log out</button>
@@ -59,6 +55,7 @@ export default function ProfileCard() {
 				<img src={BackgroundImage} alt="Delco Boxing Academy" />
 				<h3 className="bold-text">Delco Boxing Academy</h3>
 			</header>
+
 			
 			<div className="social-container">
 				<div className="Place">
@@ -68,7 +65,7 @@ export default function ProfileCard() {
 				
 				<div className="Rating">
 					<h2 className="bold-text">Rating:4.5</h2>
-					
+					<p ><h5><Link to="ProfileCard">edit</Link>/<Link to="/">delete</Link></h5></p>
 				</div>
 			</div>
 			</div>
@@ -80,7 +77,7 @@ export default function ProfileCard() {
 			<button>
 	
 		
-		<div className="card-container">
+		<div className="card-container1">
 
 			<header>
 			<img src={BackgroundImg} alt="Delco Boxing Academy" />
@@ -97,7 +94,7 @@ export default function ProfileCard() {
 				
 				<div className="Rating">
 					<h2 className="bold-text">Rating:4.4</h2>
-					
+					<p ><h5><Link to="/AdminEditStudent">edit</Link>/<Link to="/">delete</Link></h5></p>
 				</div>
 			</div>
 		</div>
