@@ -40,10 +40,11 @@ const App = () => {
                 console.log(userData);
 
                 if (userData === 'false') {
-                    alert('Data Not Inserted');
+                    alert('Login credentials doesnot match');
                 }
                 else if (userData === 'true') {
-                    alert('Data Inserted');
+                //    alert('Data Inserted');
+                
                     //write here to clear
                     history.push("/AdminHomePage");
                 }

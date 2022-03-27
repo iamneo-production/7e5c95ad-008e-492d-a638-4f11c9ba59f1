@@ -34,7 +34,7 @@ export default function ProfileCard() {
 	</center>
 		<br />
 		<center>
-		<div className="card-container" id="enrolledCourse">
+		<div className="card-container" id="userCourseGrid1">
 
 			 <h6>Course name : Strength training</h6>
              <h6> Course Duration : 3months</h6>
@@ -49,7 +49,7 @@ export default function ProfileCard() {
             </div>
 			<br />
 		
-		<div className="card-container" id="enrolledCourse">
+		<div className="card-container" id="userCourseGrid2">
         
 			 <h6>Course name : Conditioning work</h6>
              <h6> Course Duration : 5months</h6>

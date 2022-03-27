@@ -43,10 +43,10 @@ const App = () => {
                 console.log(userData);
 
                 if (userData === 'false') {
-                    alert('Data Not Inserted');
+                    alert('Credentials Already exists');
                 }
                 else if (userData === 'true') {
-                    alert('Data Inserted');
+                  alert('Course added successfully');
                     //write here to clear
                     history.push("/AdminAcademy");
                 }

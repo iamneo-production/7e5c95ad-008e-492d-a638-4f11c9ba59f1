@@ -64,10 +64,10 @@ const App = () => {
               console.log(userData);
 
               if (userData === 'false') {
-                  alert('Data Not Inserted');
+                  alert('User credentials exists');
               }
               else if (userData === 'true') {
-                  alert('Data Inserted');
+                  alert('Registered Successfully');
                   //write here to clear
                   history.push("/login");
               }

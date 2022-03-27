@@ -54,10 +54,10 @@ const App = () => {
                 console.log(userData);
 
                 if (userData === 'false') {
-                    alert('Data Not Inserted');
+                    // alert('Data Not Inserted');
                 }
                 else if (userData === 'true') {
-                    alert('Data Inserted');
+                    alert('Updated Successfully');
                     //write here to clear
                     history.push("/AdminAcademy");
                 }

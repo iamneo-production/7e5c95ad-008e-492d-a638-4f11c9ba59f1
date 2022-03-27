@@ -46,7 +46,7 @@ export default function ProfileCard() {
 			<button>
 	
 		
-		<div className="card-container">
+		<div className="card-container" id="userAcademyGrid1">
 			<header>
 				<img src={BackgroundImage} alt="Delco Boxing Academy" />
 				<h3 className="bold-text">Delco Boxing Academy</h3>
@@ -72,7 +72,7 @@ export default function ProfileCard() {
 			<button>
 	
 		
-		<div className="card-container">
+		<div className="card-container" id="userAcademyGrid2">
 
 			<header>
 			<img src={BackgroundImg} alt="Delco Boxing Academy" />
