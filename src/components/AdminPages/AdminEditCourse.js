@@ -7,12 +7,12 @@ import BackgroundImage from '../../assets/images/admin.jpg'
 
 const App = () => {
     const [data,setData] = useState({
-        AcademyName: '',
-        EnterAcademyLocation : '',
-        Academyemail : '',
-        ContactNumber:'',
-        EnterAcademyImageUrl:'',
-        confirmEnterAcademyImageUrl:'',
+        institutename: '',
+        instituteaddress : '',
+        email : '',
+        moblie:'',
+        imageurl:'',
+        institutedescription:'',
     } )
     const {AcademyName,EnterAcademyLocation,Academyemail,ContactNumber,EnterAcademyImageUrl,confirmEnterAcademyImageUrl} =data;
     const changeHandler = e =>{
