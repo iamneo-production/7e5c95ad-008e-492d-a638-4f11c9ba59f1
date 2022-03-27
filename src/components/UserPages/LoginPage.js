@@ -42,7 +42,7 @@ const App = () => {
                 console.log(userData);
 
                 if (userData === 'false') {
-                    alert('login credentials doesnot match');
+                    alert('login credentials does not match');
                 }
                 else if (userData === 'true') {
                    // alert('Data Inserted');
