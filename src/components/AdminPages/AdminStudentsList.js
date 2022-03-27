@@ -1,10 +1,49 @@
 import '../../Enrolled.css'
 import { Link } from 'react-router-dom'
+import Select from 'react-select'
 import React from "react"
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@material-ui/core'
+const aquaticCreatures = [
+	{ label: 'Strength training', value: 'Strength training' },
+	{ label: 'Gymnastics training', value: 'Gymnastics training' },
+  ];
 export default function StudentList() {
 	return (
+		
 		<TableContainer component={Paper}>
+			<center>
+			<Link to="/AdminAcademy">
+			<button className="primary-button">Academy</button>
+		</Link>
+
+		<Link to="/AdminCourse">
+			<button className="primary-button">Course</button>
+		</Link>
+
+		<Link to="/AdminStudentsList">
+			<button className="primary-button">Students</button>
+		</Link>
+
+		<Link to="/AdminAddStudent">
+		<button className="primary-button">Add Students</button>
+	</Link>
+
+		<Link to="/">
+		<button className="primary-button">Log out</button>
+			</Link>
+
+			</center>
+		<br/>
+		<center>
+		<div className="App">	
+      <Select
+        options={aquaticCreatures}
+      />
+    </div>
+	</center>
+		<br />
+
+						
 			<Table>
 				<TableHead className="table">
 					<TableRow>
@@ -25,6 +64,7 @@ export default function StudentList() {
 						<TableCell>3393992020</TableCell>
 						<TableCell> 
 						<p><Link to="/AdminEditStudent">edit</Link>/<Link to="/">delete</Link></p>
+						
 
 						</TableCell>
 					</TableRow>
@@ -44,13 +84,16 @@ export default function StudentList() {
 						<TableCell>3393992027</TableCell>
 						<TableCell> 
 						<p><Link to="/AdminEditStudent">edit</Link>/<Link to="/">delete</Link></p>
-
+			
 						</TableCell>
 					</TableRow>
 				</TableBody>
 			</Table>
 		</TableContainer>
+		
+
 	)
 }
+
 
 
