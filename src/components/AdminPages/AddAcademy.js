@@ -29,9 +29,7 @@ const App = () => {
    else if(moblie.length !==10){
        alert("Contact number should be 10 digits");
    }
-   else if (imageurl.length <8 || imageurl.length >14){
-     alert("EnterAcademyImageUrl should be minimum 8 characters long");
-   }
+   
     // else if(EnterAcademyImageUrl !== institutedescription){
     //     alert("EnterAcademyImageUrls are not matching");
     // }

@@ -65,7 +65,7 @@ export default function ProfileCard() {
 				
 				<div className="Rating">
 					<h2 className="bold-text">Rating:4.5</h2>
-					<p ><h5><Link to="ProfileCard">edit</Link>/<Link to="/">delete</Link></h5></p>
+					<p ><h5><Link to="/AdminEditStudent">edit</Link>/<Link to="/">delete</Link></h5></p>
 				</div>
 			</div>
 			</div>
@@ -94,7 +94,10 @@ export default function ProfileCard() {
 				
 				<div className="Rating">
 					<h2 className="bold-text">Rating:4.4</h2>
-					<p ><h5><Link to="/AdminEditStudent">edit</Link>/<Link to="/">delete</Link></h5></p>
+					<p ><h5><Link to="/AdminEditStudent">edit</Link>
+					{/* / */}
+					{/* <Link to="/">delete</Link> */}
+					</h5></p>
 				</div>
 			</div>
 		</div>
