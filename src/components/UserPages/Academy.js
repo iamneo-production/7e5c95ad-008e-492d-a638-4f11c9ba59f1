@@ -8,8 +8,13 @@ import BackgroundImage from '../../assets/images/Delco.jpg'
 import Select from 'react-select';
 
 const aquaticCreatures = [
+<<<<<<< HEAD
 	{ label: 'Banglore', value: 'Delco Boxing Academy' },
 	{ label: 'Chennai', value: 'RK Boxing Academy' },
+=======
+	{ label: 'Banglore', value: 'Banglore' },
+	{ label: 'Chennai', value: 'Chennai' },
+>>>>>>> f10e1bca9b23f8e4c932d7f8faa56127a4d987f4
   ];
 
 
