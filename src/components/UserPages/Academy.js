@@ -12,7 +12,6 @@ const aquaticCreatures = [
 	{ label: 'Chennai', value: 'Chennai' },
   ];
 
-
 export default function ProfileCard() {
 	return (
 		
