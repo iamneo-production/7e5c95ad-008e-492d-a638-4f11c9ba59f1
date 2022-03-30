@@ -43,7 +43,7 @@ const App = () => {
                     alert('Login credentials does not match');
                 }
                 else if (userData === 'true') {
-                //    alert('Data Inserted');
+                //    alert('Data Updated');
                 
                     //write here to clear
                     history.push("/AdminHomePage");
