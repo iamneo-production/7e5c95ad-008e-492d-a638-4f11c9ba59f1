@@ -42,8 +42,7 @@ export default function StudentList() {
     </div>
 	</center>
 		<br />
-
-						
+<br/>						
 			<Table>
 				<TableHead className="table">
 					<TableRow>
